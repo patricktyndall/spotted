@@ -5,15 +5,15 @@ function signUp(){
 function newUser(){
     var code = getParameterByName('code');
     console.log('code: '+code);
+    var data = {'code': code};
 
-    /*
-    let url='https://api.spotify.com/v1/me/tracks';
+    
+    let url='http://localhost:5000/spotted/api/v1.0/users';
     $.ajax({ 
             url: url,
             dataType: 'json', 
-            type: 'GET',
-            headers:{'Authorization': 'Bearer BQDW7xSxqx4PtMuUp130QDbH_LjvZMS-GBWVpj62rSjMiJ8XfJaZzIJpIYc7meHzs3SJ_niGwN-ud85eE6zK1hkFhziI3pMgOuhPqkWoRHVHQj_9dcE6eqxMxle77OhNxHXMMVxZicmzHAPKZsLPlic',
-                'Accept': 'application/json'},
+            type: 'POST',
+            data: data,
             success: function(response) {
                  alert(response)
                  console.log(response);
@@ -23,7 +23,6 @@ function newUser(){
                 alert(error);
             }
         });
-        */
 }
 
 function getParameterByName(name, url) {
